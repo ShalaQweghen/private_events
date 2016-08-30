@@ -5,6 +5,6 @@
 <h2>Attendees</h2>
 <ol>
 	<% @event.attendees.each do |attendee| %>
-		<li><%= attendee.name %></li>
+		<li><%= link_to "#{attendee.name}", user_path(attendee) %></li>
 	<% end %>
 </ol>

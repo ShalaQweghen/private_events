@@ -1,15 +1,41 @@
 <h1>Events</h1>
 
 <h2>Past</h2>
-<ol>
+<table>
+	<tr>
+		<th>Event Name</th>
+		<th>Created by</th>
+		<th>Address</th>
+		<th>Time</th>
+		<th>Description</th>
+	</tr>
 	<% @past_events.each do |event| %>
-		<li><%= event.name %></li>
+		<tr>
+			<td><%= link_to "#{event.name}", event_path(event) %></td>
+			<td><%= link_to "#{event.creator.name}", user_path(event.creator.id) %></td>
+			<td><%= event.address %></td>
+			<td><%= Time.parse(event.date) %></td>
+			<td><%= event.description %></td>
+		</tr>
 	<% end %>
-</ol>
+</table>
 
 <h2>Upcoming</h2>
-<ol>
+<table>
+	<tr>
+		<th>Event Name</th>
+		<th>Created by</th>
+		<th>Address</th>
+		<th>Time</th>
+		<th>Description</th>
+	</tr>
 	<% @future_events.each do |event| %>
-		<li><%= event.name %></li>
+		<tr>
+			<td><%= link_to "#{event.name}", event_path(event) %></td>
+			<td><%= link_to "#{event.creator.name}", user_path(event.creator.id) %></td>
+			<td><%= event.address %></td>
+			<td><%= Time.parse(event.date) %></td>
+			<td><%= event.description %></td>
+		</tr>
 	<% end %>
-</ol>
+</table>

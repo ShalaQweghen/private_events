@@ -4,7 +4,7 @@
 
 <ol>
 	<% @user.events.each do |event| %>
-		<li><%= event.name %>: at <%= event.address %> on <%= event.date %></li>
+		<li><%= link_to "#{event.name}", event_path(event) %>: at <%= event.address %> on <%= event.date %><%= link_to "Invite People", invite_path %></li>
 	<% end %>
 </ol>
 
@@ -12,7 +12,7 @@
 
 <ol>
 	<% @previous_events.each do |attended_event| %>
-		<li><%= attended_event.name %></li>
+		<li><%= link_to "#{attended_event.name}", event_path(attended_event) %></li>
 	<% end %>
 </ol>
 
@@ -21,6 +21,6 @@
 
 <ol>
 	<% @upcoming_events.each do |attended_event| %>
-		<li><%= attended_event.name %></li>
+		<li><%= link_to "#{attended_event.name}", event_path(attended_event) %></li>
 	<% end %>
 </ol>
