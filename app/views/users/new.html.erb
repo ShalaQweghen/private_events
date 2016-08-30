@@ -7,8 +7,11 @@
 	<%= t.label :email %>
 	<%= t.text_field :email %>
 
-	<%= t.label :password_digest %>
-	<%= t.password_field :password_digest %>
+	<%= t.label :password %>
+	<%= t.password_field :password %>
+
+	<%= t.label :password_confirmation %>
+	<%= t.password_field :password_confirmation %>
 
 	<%= t.submit "Submit" %>
 <% end %>
