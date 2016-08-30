@@ -1,0 +1,10 @@
+<h1><%= @user.name %></h1>
+
+<h2>Events</h2>
+
+<ol>
+	<% @user.events.each do |event| %>
+		<li><%= event.name %>: at <%= event.place %> on <%= event.date %></li>
+	<% end %>
+</ol>
+
