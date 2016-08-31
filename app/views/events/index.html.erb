@@ -16,6 +16,9 @@
 			<td><%= event.address %></td>
 			<td><%= Time.parse(event.date) %></td>
 			<td><%= event.description %></td>
+			<% if current_user.id == event.creator.id %>
+				<td><%= link_to "Invite People", invite_path(id: event.id) %></td>
+			<% end %>
 		</tr>
 	<% end %>
 </table>
@@ -36,6 +39,9 @@
 			<td><%= event.address %></td>
 			<td><%= Time.parse(event.date) %></td>
 			<td><%= event.description %></td>
+			<% if current_user.id == event.creator.id %>
+				<td><%= link_to "Invite People", invite_path(id: event.id) %></td>
+			<% end %>
 		</tr>
 	<% end %>
 </table>

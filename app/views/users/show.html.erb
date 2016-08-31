@@ -4,7 +4,7 @@
 
 <ol>
 	<% @user.events.each do |event| %>
-		<li><%= link_to "#{event.name}", event_path(event) %>: at <%= event.address %> on <%= event.date %><%= link_to "Invite People", invite_path %></li>
+		<li><%= link_to "#{event.name}", event_path(event) %>: at <%= event.address %> on <%= event.date %><%= link_to "Invite People", invite_path(id: event.id) %></li>
 	<% end %>
 </ol>
 
